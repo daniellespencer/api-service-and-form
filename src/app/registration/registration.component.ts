@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegistrationComponent implements OnInit {
   title = 'registration';
   registerForm: FormGroup;
-  submitted = false;
+    submitted = false;
 
   constructor(private formBuilder: FormBuilder ) { }
 
@@ -22,7 +22,7 @@ export class RegistrationComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      acceptTerms: [false, Validators.required]
+      acceptTerms: [false, Validators.requiredTrue]
     });
   }
 
