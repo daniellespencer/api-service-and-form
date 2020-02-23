@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -8,11 +8,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  [x: string]: any;
   title = 'registration';
   registerForm: FormGroup;
     submitted = false;
 
-  constructor(private formBuilder: FormBuilder ) { }
+  constructor(private formBuilder: FormBuilder, private router: Router  ) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -35,7 +36,8 @@ export class RegistrationComponent implements OnInit {
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+    this.router.navigateByUrl('confirmation');
   }
 
   onReset() {
