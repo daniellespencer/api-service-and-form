@@ -2,6 +2,14 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
+import { RegistrationComponent } from './registration/registration.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { NewsComponent } from './news/news.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { NavigationComponent } from './navigation/navigation.component';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -9,7 +17,12 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        RegistrationComponent,
+        ConfirmationComponent,
+        NewsComponent,
+        HomePageComponent,
+        NavigationComponent
       ],
     }).compileComponents();
   }));
